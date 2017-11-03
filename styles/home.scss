@@ -6,7 +6,7 @@ h1 {
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css");
 
 body {
-  background: white;
+  background: #01FF70;
   color: black;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
@@ -14,7 +14,7 @@ body {
 }
 
 .chatbar {
-  background: tomato;
+  background: fuchsia;
   border-top: 1px solid black;
   bottom: 0;
   display: flex;
@@ -32,6 +32,8 @@ body {
   line-height: 40px;
   margin: 5px;
   padding: 0 9px;
+  background: yellow;
+  
 }
 
 .chatbar-message {
@@ -69,7 +71,7 @@ body {
 }
 
 .navbar {
-  background: tomato;
+  background:fuchsia;
   border-bottom: 1px solid black;
   height: 60px;
   left: 0;
@@ -77,6 +79,9 @@ body {
   position: fixed;
   right: 0;
   top: 0;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-brand {

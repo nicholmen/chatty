@@ -20,8 +20,11 @@ class ChatBar extends Component {
   
   onNewMessage(event){
     if(event.keyCode===13){
-    const newMessage = {type: "postMessage", id: uuidv4(), username: this.props.currentUser.name, content: event.target.value};
-    this.props.sendMessage(newMessage)
+      console.log(event)
+      const newMessage = {type: "postMessage", id: uuidv4(), username: this.props.currentUser.name, content: event.target.value};
+      this.props.sendMessage(newMessage)
+      event.target.value = '';
+     
     }
   }
 
