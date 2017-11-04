@@ -15,7 +15,7 @@ const wss = new SocketServer({ server });
 function broadcast(data) {
   wss.clients.forEach(client => {
     if(client.readyState === ws.OPEN) {
-      console.log('** ' + data.type + ' ** ' + data.username + " says " + data.content)
+      // console.log('** ' + data.type + ' ** ' + data.username + " says " + data.content)
     client.send(JSON.stringify(data));
     }
   })
@@ -25,16 +25,17 @@ wss.on('connection', (socket) => {
 
   let userNumber = {type: "userCount", value: wss.clients.size};
   broadcast(userNumber);
-  console.log('Client connected');
+  console.log('Client connected', userNumber);
 
   socket.on('message', data => {
+    console.log('message', data)
     data = JSON.parse(data)
     broadcast(data);
   })
 
   socket.on('close', () => {
-    console.log('Client disconnected', userNumber)
     let userNumber = {type: "userCount", value: wss.clients.size};
+    console.log('Client disconnected', userNumber)
     broadcast(userNumber);
   });
 
