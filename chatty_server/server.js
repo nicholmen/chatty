@@ -2,6 +2,8 @@
 const express = require('express');
 const SocketServer = require('ws').Server;
 const ws = require('ws')
+const uuidv4 = require('uuid/v4');
+
 
 const PORT = 3001;
 
@@ -28,7 +30,6 @@ wss.on('connection', (socket) => {
   console.log('Client connected', userNumber);
 
   socket.on('message', data => {
-    console.log('message', data)
     data = JSON.parse(data)
     broadcast(data);
   })

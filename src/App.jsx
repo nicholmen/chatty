@@ -31,18 +31,6 @@ class App extends Component {
       this.setState({currentUser: {name: username }})
     }
 
-  // onNewMessage(event){
-  //   if(event.keyCode===13){
-  //     const newMessage = {"type": "postNotification", id: uuidv4(), username: this.state.currentUser.name, content: event.target.value};
-  //     this.socket.send(JSON.stringify(newMessage))
-  //     // const messages = this.state.messages.concat(newMessage)
-  //     // // Update the state of the app component.
-  //     // // Calling setState will trigger a call to render() in App and all child components.
-  //     // this.setState({messages: messages})
-  //     event.target.value = '';
-  //   }
-  // }
-
   sendMessage = (message) => {
     this.socket.send(JSON.stringify(message))
   }

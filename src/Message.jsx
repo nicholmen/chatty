@@ -12,16 +12,16 @@ class Message extends Component {
           </div>
 
       );
-  } else {
-    return (
-      <div className="message system">
-        {this.props.content}
-      </div>
+    } 
+    else {
+      return (
+        <div className="message system">
+          {this.props.content}
+        </div>
 
-    )
-  }
-
-
+      )
+    }
   }
 }
+
 export default Message;

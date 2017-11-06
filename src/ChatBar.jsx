@@ -17,20 +17,17 @@ class ChatBar extends Component {
       this.props.updateUsername(newUsername)
     }
   }
-  
+
   onNewMessage(event){
     if(event.keyCode===13){
-      console.log(event)
       const newMessage = {type: "postMessage", id: uuidv4(), username: this.props.currentUser.name, content: event.target.value};
       this.props.sendMessage(newMessage)
       event.target.value = '';
-     
+
     }
   }
 
   render() {
-    console.log(this.props)
-    console.log('tree signal', this.props.currentUser.name)
     return (
       <footer className="chatbar">
         <input className="chatbar-username" placeholder={ this.props.currentUser.name }  onKeyUp = { this.onUserNameChange } />
